@@ -1,11 +1,12 @@
-// import { XXX } from './../src/backend-code.js';
+// import { MusicSearch } from './../src/backend-code.js';
 //
-// describe('XXX', function() {
+// describe('test', function() {
+//   const input = "Jack Johnson";
+//   const musicSearch = new MusicSearch();
+//   musicSearch.getAlbumsByArtist(input);
 //
-//   it('should ...', function() {
-//     expect(triangle.side1).toEqual(3);
-//     expect(triangle.side2).toEqual(4);
-//     expect(triangle.side3).not.toEqual(6);
+//   it('should get the artist id from Musixmatch', function() {
+//     expect(musicSearch.artistId).toEqual("success");
 //   });
-// 
+//
 // })

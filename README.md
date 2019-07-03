@@ -1,22 +1,21 @@
-# Bagheera's Pizzeria
+# Music Search
 
-#### _A web site for ordering pizza - June 21, 2019_
+#### _A web site for searching for music - July 3, 2019_
 
-#### _By **Na Hyung Choi**_
+#### _By **Na Hyung Choi and Saswati Patra**_
 
 ## Description
 
-On this web site, the user can choose toppings, crust, and a size for one or more pizzas, see the details of the order and the final cost, and "place an order."
+On this web site, the user can search by artist name to get a list of albums.
 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Creates a new pizza through a constructor** | var pizza1 = new Pizza ("large", ["cheese", "sausage"]) | pizza1 = { size : "large", toppings: ["cheese", "sausage"], cost: undefined} |
+| **Search by artist to get list of albums** | Jack Johnson | The Essentials (2018), Big Sur (2018), Willie Got Me Stoned (Live) (2018)... |
 
 ## Setup/Installation Requirements
 
-* Clone this repository and open the .html file.
-* OR go directly to the [Web page](http://schoinh.github.io/pizza)
+
 
 ## Known Bugs
 * No known bugs at this time.
@@ -28,10 +27,10 @@ On this web site, the user can choose toppings, crust, and a size for one or mor
 
 ## Support and contact details
 
-_Please contact Na Hyung with questions and comments._
+_Please contact Na Hyung and Saswati with questions and comments._
 
 ### License
 
 *GNU GPLv3*
 
-Copyright (c) 2019 **_Na Hyung Choi_**
+Copyright (c) 2019 **_Na Hyung Choi and Saswati Patra_**
