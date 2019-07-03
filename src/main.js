@@ -7,6 +7,7 @@ import { MusicSearch } from './backend-code';
 $(document).ready(function() {
   $('form').submit(function(event) {
     event.preventDefault();
+    $('.showArtistAlbums').empty();
 
     let inputArtist = $('#inputArtist').val();
     $('#inputArtist').val("");
