@@ -12,15 +12,21 @@ $(document).ready(function() {
     $('#inputArtist').val("");
 
 
-    let musicSearch = new MusicSearch();  // create instance of WeatherService class
-    let promise = musicSearch.getArtistId(inputArtist);  // call the instance method and pass in user input
+    let musicSearch = new MusicSearch();
+    let promise = musicSearch.getArtistId(inputArtist);
 
-    promise.then(function(response) {
-      console.log('response: ', response);
-      let output = JSON.parse(response);
-      console.log(output);
-      $('.showArtistId').text(`The ID number of ${inputArtist} is ${output.message.body.artist_list[0].artist.artist_id}, and the associated artist name in the database is ${output.message.body.artist_list[0].artist.artist_name}.`);
-    }, function(error) {
+  promise
+    .then(function(result) {
+      let output = JSON.parse(result);
+      let artistId = `${output.message.body.artist_list[0].artist.artist_id}`
+      $('.showArtistId').text(`The ID number of ${inputArtist} is ${artistId}.`);
+      return musicSearch.getArtistAlbums(artistId);
+    })
+    .then(function(newResult){
+      let output = JSON.parse(newResult);
+      $('.showArtistAlbums').text(`Albums: ${output.message.body.album_list[0].album.album_name}.`);
+    })
+    .catch(function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
   });
