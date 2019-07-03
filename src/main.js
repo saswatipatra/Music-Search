@@ -11,24 +11,25 @@ $(document).ready(function() {
     let inputArtist = $('#inputArtist').val();
     $('#inputArtist').val("");
 
-
     let musicSearch = new MusicSearch();
     let promise = musicSearch.getArtistId(inputArtist);
 
   promise
     .then(function(result) {
       let output = JSON.parse(result);
-      let artistId = `${output.message.body.artist_list[0].artist.artist_id}`
-      $('.showArtistId').text(`The ID number of ${inputArtist} is ${artistId}.`);
+      let artistId = output.message.body.artist_list[0].artist.artist_id;
+      // $('.showArtistId').text(`The ID number of ${inputArtist} is ${artistId}.`);
       return musicSearch.getArtistAlbums(artistId);
     })
     .then(function(newResult){
       let output = JSON.parse(newResult);
-      $('.showArtistAlbums').text(`Albums: ${output.message.body.album_list[0].album.album_name}.`);
+      let albumList = output.message.body.album_list;
+      for (var i = 0; i < albumList.length; i++) {
+        $('.showArtistAlbums').append(`${albumList[i].album.album_name}<br>`)
+      }
     })
     .catch(function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
   });
-
 });
